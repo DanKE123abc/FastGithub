@@ -417,7 +417,7 @@ code {
 <h3 id="4-%E8%AF%81%E4%B9%A6%E9%AA%8C%E8%AF%81">4 证书验证</h3>
 <h4 id="41-git">4.1 git</h4>
 <p>git操作提示<code>SSL certificate problem</code></br>
-需要关闭git的证书验证：<code>git config --global http.sslverify false</code></p>
+让Git使用系统的证书库：<code>git config --global http.sslbackend schannel</code></p>
 <h4 id="42-firefox">4.2 firefox</h4>
 <p>firefox提示<code>连接有潜在的安全问题</code></br>
 设置-&gt;隐私与安全-&gt;证书-&gt;查看证书-&gt;证书颁发机构，导入cacert/fastgithub.cer，勾选“信任由此证书颁发机构来标识网站”</p>

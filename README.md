@@ -44,7 +44,7 @@ github加速神器，解决github打不开、用户头像无法加载、releases
 ### 4 证书验证
 #### 4.1 git
 git操作提示`SSL certificate problem`</br>
-需要关闭git的证书验证：`git config --global http.sslverify false`
+让Git使用系统的证书库：`git config --global http.sslbackend schannel`
 
 #### 4.2 firefox
 firefox提示`连接有潜在的安全问题`</br>
