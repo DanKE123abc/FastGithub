@@ -94,7 +94,7 @@ namespace FastGithub.HttpServer.Certs
                 this.logger.LogWarning($"请根据你的系统平台手动安装和信任CA证书{this.CaCerFilePath}");
             }
 
-            GitConfigSslverify(false);
+            GitConfigSSLChannel("schannel");
         }
 
         /// <summary>
@@ -102,14 +102,14 @@ namespace FastGithub.HttpServer.Certs
         /// </summary>
         /// <param name="value">是否验证</param>
         /// <returns></returns>
-        public static bool GitConfigSslverify(bool value)
+        public static bool GitConfigSSLChannel(string value)
         {
             try
             {
                 Process.Start(new ProcessStartInfo
                 {
                     FileName = "git",
-                    Arguments = $"config --global http.sslverify {value.ToString().ToLower()}",
+                    Arguments = $"config --global http.sslbackend {value.ToLower()}",
                     UseShellExecute = true,
                     CreateNoWindow = true,
                     WindowStyle = ProcessWindowStyle.Hidden
